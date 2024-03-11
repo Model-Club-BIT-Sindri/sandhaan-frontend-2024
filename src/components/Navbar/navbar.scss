@@ -1,0 +1,39 @@
+.container {
+  height: 4%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6rem;
+  background-color: rgba(0, 0, 0, 0.4);
+  color: rgb(243, 246, 248);
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  padding: 2rem;
+}
+
+.image-1 {
+  display: flex;
+  background-blend-mode: color-burn;
+  padding-left: 3%;
+}
+
+.fist {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  column-gap: 10%;
+  font-weight: bold;
+  font-size: max(1vw , 1rem);
+  cursor: pointer;
+}
+
+.fist li {
+  transition: 0.5s all;
+}
+
+.fist li:hover {
+  color: yellow;
+  transform: translateY(-12%);
+}

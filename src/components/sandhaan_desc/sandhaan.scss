@@ -1,0 +1,32 @@
+.descript {
+  color: whitesmoke;
+  background: black;
+  width: 100vw;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 2rem 0;
+}
+
+.descript p {
+  width: 70%;
+  padding-bottom: 4rem;
+  padding-top: 2rem;
+}
+
+.descript img {
+  height: 10rem;
+  width: min(40%, 90vw);
+  overflow: hidden;
+  object-fit: cover;
+  margin: 1rem 0;
+}
+
+.descript h1 {
+  color: rgba(248, 252, 5, 0.904);
+  font-size: 3rem;
+}

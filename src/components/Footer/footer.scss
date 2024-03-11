@@ -1,0 +1,16 @@
+.footer {
+  width: 100vw;
+  background-color: rgb(255, 255, 255);
+  color: white;
+  padding: 2rem;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: flex-start;
+}
+
+.foot_1 p {
+  color: #000;
+  font-size: max(1rem, 1.2vw);
+}
