@@ -76,6 +76,7 @@ const Registration = () => {
                 }))
               }
             >
+              <option value="">Select Batch</option>
               <option value="2020">2020</option>
               <option value="2021">2021</option>
               <option value="2022">2022</option>
@@ -92,6 +93,7 @@ const Registration = () => {
                 }))
               }
             >
+              <option value="">Select Branch</option>
               <option value="Computer Science & Engineering">
                 Computer Science & Engineering
               </option>
