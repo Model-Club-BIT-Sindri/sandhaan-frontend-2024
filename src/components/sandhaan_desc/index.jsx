@@ -5,7 +5,7 @@ const Description = () => {
   return (
     <div className="descript">
       <img
-        src="src/assets/Sandhaan logo png-01.png"
+        src="https://res.cloudinary.com/dsc5jtemn/image/upload/v1710330900/vhrsaawfxvpzkgpke4b4.png"
         alt=""
         height={600}
         width={600}
