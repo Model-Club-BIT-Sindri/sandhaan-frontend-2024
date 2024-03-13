@@ -18,7 +18,7 @@ const Description = () => {
         SANDHAAN and carry away a lifetime experience. Model club of BIT Sindri
         being the protagonist of the play, has augmented year by year in
         delivering the much-anticipated techno-management fest of the region. We
-        are back again with SANDHAAN'23 to witness a crowd of approximately 5000
+        are back again with SANDHAAN'24 to witness a crowd of approximately 5000
         people which includes students from various technical colleges of
         national and regional level.
       </p>

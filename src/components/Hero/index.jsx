@@ -4,7 +4,7 @@ const Hero = () => {
   return (
     <div className="contain">
       <video
-        src="src/assets/modelintro.mp4"
+        src="https://res.cloudinary.com/dsc5jtemn/video/upload/v1710166780/pepijdv6pli7wp7upbq9.mp4"
         className="video"
         autoPlay
         loop

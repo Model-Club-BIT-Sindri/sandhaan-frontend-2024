@@ -1,19 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import Landing from './pages'
-
+import "./App.css";
+import Landing from "./pages";
+import { Routes, Route } from "react-router-dom";
+import Registration from "./components/Registration";
 function App() {
-  
-
   return (
-    <>
-     <div className="Fire">
-        <Landing/>
-     </div>
-    </>
-  )
+    <Routes>
+      <Route path="/" element={<Landing />} />
+      <Route path="/event/:id" element={<Registration />} />
+    </Routes>
+  );
 }
 
-export default App
+export default App;

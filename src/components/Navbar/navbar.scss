@@ -1,17 +1,23 @@
 .container {
   height: 4%;
-  width: 100%;
+  width: 100vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   padding: 0.6rem;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   color: rgb(243, 246, 248);
   position: fixed;
   z-index: 10;
   top: 0;
-  padding: 2rem;
+  padding: 2.5rem;
+  margin: 0 auto;
 }
 
+.container img {
+  width: 3rem;
+  mix-blend-mode: color-burn;
+}
 .image-1 {
   display: flex;
   background-blend-mode: color-burn;
@@ -25,7 +31,7 @@
   justify-content: center;
   column-gap: 10%;
   font-weight: bold;
-  font-size: max(1vw , 1rem);
+  font-size: max(1vw, 1rem);
   cursor: pointer;
 }
 

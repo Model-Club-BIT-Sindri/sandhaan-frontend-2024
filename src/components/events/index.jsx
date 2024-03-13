@@ -1,26 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../events/events.scss";
-
+const apiUrl = import.meta.env.VITE_API_URL;
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 const Event = () => {
+  const [events, setEvents] = useState([]);
+  useEffect(() => {
+    axios
+      .get(`${apiUrl}/api/v1/allevents`)
+      .then((data) => setEvents(data?.data?.events));
+  }, []);
+  const navigate = useNavigate();
   return (
     <div className="event_section">
       <h1 className="head_1">OUR EVENTS</h1>
-      <div className="card_container">
-        <div className="card_contain">
-          <div className="event_image">
-            <img src="src/assets/robo-saga.jpeg" alt="" />
+      <div className="events">
+        {events?.map((event) => (
+          <div key={event._id} className="card_container">
+            <div className="card_contain">
+              <div className="event_image">
+                <img src={event?.imageLinks} alt={event?.name} />
+              </div>
+              <h1>{event?.name}</h1>
+              <p>{event?.description}</p>
+              <button onClick={() => navigate(`/event/${event?._id}`)}>
+                Register Here!
+              </button>
+            </div>
           </div>
-          <h1>ROBO SAGA</h1>
-          <p>
-            In this event manual bots will be battling it out in 3 stages. The
-            participants will have to construct All Terrain vehicle which can
-            run on tracks having various hurdles. The bot will start from one
-            end of the track and it has to reach the finishing end of the track
-            by crossing all the hurdles. Winner will be decided on the basis of
-            the time taken by each team.{" "}
-          </p>
-          <button>Register Here!</button>
-        </div>
+        ))}
       </div>
     </div>
   );
