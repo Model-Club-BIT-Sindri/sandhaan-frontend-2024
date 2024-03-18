@@ -9,13 +9,11 @@
   align-items: center;
   text-align: center;
   font-size: 1.5rem;
-  padding: 2rem 0;
 }
 
 .descript p {
   width: 70%;
-  padding-bottom: 4rem;
-  padding-top: 2rem;
+  font-size: 1.2rem;
 }
 
 .descript img {
@@ -29,4 +27,30 @@
 .descript h1 {
   color: rgba(248, 252, 5, 0.904);
   font-size: 3rem;
+}
+
+svg {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+span {
+  color: white;
+  font-family: sans-serif;
+  opacity: 0.3;
+}
+
+.descriptbody {
+  background-color: #2a2b2f;
+  padding: 2vmax;
+  border-radius: 15px;
+  width: max(375px, 85vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding-bottom: 4vmax;
+  margin: 4vmax auto;
 }

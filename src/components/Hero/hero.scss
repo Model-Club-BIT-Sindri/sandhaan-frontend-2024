@@ -7,6 +7,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: -8rem;
 }
 
 .video {
@@ -15,4 +16,6 @@
   min-height: 100%;
   background: cover;
   object-fit: cover;
+  top: 0;
+  left: 0;
 }

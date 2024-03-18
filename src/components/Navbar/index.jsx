@@ -1,17 +1,34 @@
 import React from "react";
 import "../Navbar/navbar.scss";
-import bitLogo from "../../assets/bitlogo.png";
 import modelLogo from "../../assets/club-logo.jpeg";
+import { IoSearchOutline } from "react-icons/io5";
+
 const Nav = () => {
   return (
-    <div className="container">
-      <div className="fist">
-        <img src={bitLogo} alt="bitLogo" />
-        <li>HOME</li>
-        <li>EVENTS</li>
-        <li>CONTACT US</li>
-        <img src={modelLogo} alt="modelLogo" className="w-20 h-auto" />
-      </div>
+    <div className="nav-wrapper">
+      <div className="grad-bar"></div>
+      <nav className="navbar">
+        <img src={modelLogo} alt="Model Logo" />
+        <div className="menu-toggle" id="mobile-menu">
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </div>
+        <ul className="nav no-search">
+          <li className="nav-item">
+            <a href="#">Home</a>
+          </li>
+          <li className="nav-item">
+            <a href="#events">Our Events</a>
+          </li>
+          <li className="nav-item">
+            <a href="#contactus">Contact Us</a>
+          </li>
+          <li className="nav-item">
+            <a href="#pastevents">Past Events</a>
+          </li>
+        </ul>
+      </nav>
     </div>
   );
 };

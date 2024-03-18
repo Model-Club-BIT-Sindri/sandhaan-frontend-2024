@@ -3,6 +3,7 @@ import "../events/events.scss";
 const apiUrl = import.meta.env.VITE_API_URL;
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { EventCard } from "./EventCard";
 const Event = () => {
   const [events, setEvents] = useState([]);
   useEffect(() => {
@@ -12,22 +13,17 @@ const Event = () => {
   }, []);
   const navigate = useNavigate();
   return (
-    <div className="event_section">
-      <h1 className="head_1">OUR EVENTS</h1>
+    <div className="event_section" id="events">
       <div className="events">
+        <div className="head_1">
+          <p>OUR EVENTS</p>
+        </div>
         {events?.map((event) => (
-          <div key={event._id} className="card_container">
-            <div className="card_contain">
-              <div className="event_image">
-                <img src={event?.imageLinks} alt={event?.name} />
-              </div>
-              <h1>{event?.name}</h1>
-              <p>{event?.description}</p>
-              <button onClick={() => navigate(`/event/${event?._id}`)}>
-                Register Here!
-              </button>
-            </div>
-          </div>
+          <EventCard
+            name={event?.name}
+            imageLinks={event?.imageLinks}
+            description={event?.description}
+          />
         ))}
       </div>
     </div>
