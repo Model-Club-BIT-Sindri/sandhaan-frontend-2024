@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import "../events/events.scss";
+import "./events.scss";
 const apiUrl = import.meta.env.VITE_API_URL;
 import axios from "axios";
 import { EventCard } from "./EventCard";
@@ -11,10 +11,13 @@ const Event = () => {
       .then((data) => setEvents(data?.data?.events));
   }, []);
   return (
-    <div className="event_section grid place-items-center my-4" id="events">
+    <div
+      className="event_section grid place-items-center my-4 bg-[#212534]"
+      id="events"
+    >
       <div className="events">
         <div className="head_1">
-          <p>OUR EVENTS</p>
+          <p className="text-2xl my-4">OUR EVENTS</p>
         </div>
         <div className="flex justify-center items-center gap-4 flex-wrap">
           {events?.map((event) => (
