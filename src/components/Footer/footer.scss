@@ -3,11 +3,22 @@
   height: 5rem;
   display: grid;
   place-items: center;
+  background-color: #eee;
 }
 
 .footer p {
-  color: #ffffff;
+  color: #878787;
   font-size: max(1rem, 1.2vw);
   text-align: center;
   width: 100%;
+}
+
+.footer .icon {
+  font-size: 1rem;
+}
+
+.footer .contact {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
