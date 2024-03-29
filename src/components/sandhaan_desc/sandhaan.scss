@@ -1,6 +1,5 @@
 .descript {
   color: whitesmoke;
-  background: black;
   width: 100vw;
   height: max-content;
   display: flex;
@@ -42,7 +41,7 @@ span {
 }
 
 .descriptbody {
-  background-color: #2a2b2f;
+  background: linear-gradient(90deg, #171721, #060609);
   padding: 2vmax;
   border-radius: 15px;
   width: max(375px, 85vw);

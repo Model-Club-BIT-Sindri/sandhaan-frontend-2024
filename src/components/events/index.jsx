@@ -11,10 +11,7 @@ const Event = () => {
       .then((data) => setEvents(data?.data?.events));
   }, []);
   return (
-    <div
-      className="event_section grid place-items-center my-4 bg-[#212534]"
-      id="events"
-    >
+    <div className="event_section grid place-items-center my-4" id="events">
       <div className="events">
         <div className="head_1">
           <p className="text-2xl my-4">OUR EVENTS</p>
@@ -22,6 +19,7 @@ const Event = () => {
         <div className="flex justify-center items-center gap-4 flex-wrap">
           {events?.map((event) => (
             <EventCard
+              key={event._id}
               id={event._id}
               name={event?.name}
               imageLinks={event?.imageLinks}

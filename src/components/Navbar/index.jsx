@@ -1,12 +1,10 @@
 import React from "react";
 import "../Navbar/navbar.scss";
-import modelLogo from "../../assets/club-logo.jpeg";
-import { IoSearchOutline } from "react-icons/io5";
+import modelLogo from "../../assets/club-logo.png";
 
 const Nav = () => {
   return (
     <div className="nav-wrapper">
-      <div className="grad-bar"></div>
       <nav className="navbar">
         <img src={modelLogo} alt="Model Logo" />
         <div className="menu-toggle" id="mobile-menu">

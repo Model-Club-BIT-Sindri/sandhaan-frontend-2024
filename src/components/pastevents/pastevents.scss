@@ -1,0 +1,14 @@
+.slider {
+  height: 450px;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+}
+
+.slides {
+  background-color: #fff;
+  width: 800px;
+  height: 100%;
+  aspect-ratio: 16/9;
+}

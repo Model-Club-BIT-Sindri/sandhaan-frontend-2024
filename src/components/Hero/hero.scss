@@ -7,15 +7,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: -8rem;
 }
 
-.video {
+#bgimage {
+  background: url("https://www.bitsindri.ac.in/old/images/slide/2022/EE6DCBE6-20FD-4B0E-8154-EB2166F485E4.jpeg")
+    no-repeat center center / cover;
+  position: relative;
+}
+#bgimage::before {
+  content: "";
   position: absolute;
-  min-width: 100%;
-  min-height: 100%;
-  background: cover;
-  object-fit: cover;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
 }
