@@ -8,7 +8,7 @@ const Event = () => {
   useEffect(() => {
     axios
       .get(`${apiUrl}/api/v1/allevents`)
-      .then((data) => setEvents(data?.data?.events));
+      .then((data) => setEvents(data?.data?.data));
   }, []);
   return (
     <div className="event_section grid place-items-center my-4" id="events">
@@ -24,6 +24,9 @@ const Event = () => {
               name={event?.name}
               imageLinks={event?.imageLinks}
               description={event?.description}
+              rullBookLink={event?.rullBookLink}
+              startDate={event?.startDate}
+              endDate={event?.endDate}
             />
           ))}
         </div>
