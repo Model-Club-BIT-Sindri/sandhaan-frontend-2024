@@ -1,14 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-export const EventCard = ({
-  id,
-  name,
-  imageLinks,
-  description,
-  rullBookLink,
-  startDate,
-  endDate,
-}) => {
+export const EventCard = ({ id, name, imageLinks, description }) => {
   const navigate = useNavigate();
   return (
     <div className="wrapper">
@@ -25,9 +17,12 @@ export const EventCard = ({
                 >
                   Register
                 </button>
-                <a className="btn" href={rullBookLink}>
+                <button
+                  className="btn"
+                  onClick={() => navigate(`/event/${id}`)}
+                >
                   Rule Book
-                </a>
+                </button>
               </div>
             </div>
             <div className="image">
