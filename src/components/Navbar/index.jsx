@@ -1,7 +1,7 @@
 import React from "react";
 import "../Navbar/navbar.scss";
 import modelLogo from "../../assets/club-logo.png";
-
+import { Link } from "react-router-dom";
 const Nav = () => {
   return (
     <div className="nav-wrapper">
@@ -26,7 +26,7 @@ const Nav = () => {
             <a href="#pastevents">Past Events</a>
           </li>
           <li className="nav-item">
-            <a href="/login">Login</a>
+            <Link href="/login">Login</Link>
           </li>
         </ul>
       </nav>
