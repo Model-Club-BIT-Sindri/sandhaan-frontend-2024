@@ -12,6 +12,7 @@
 #bgimage {
   background: url("https://www.bitsindri.ac.in/old/images/slide/2022/EE6DCBE6-20FD-4B0E-8154-EB2166F485E4.jpeg")
     no-repeat center center / cover;
+  filter: blur(8px);
   position: relative;
 }
 #bgimage::before {
@@ -23,3 +24,4 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.4);
 }
+
