@@ -2,7 +2,10 @@ import React from "react";
 import "../Navbar/navbar.scss";
 import modelLogo from "../../assets/club-logo.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Nav = () => {
+  const { user } = useSelector((state) => state.user);
+  console.log(user);
   return (
     <div className="nav-wrapper">
       <nav className="navbar">
