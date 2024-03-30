@@ -24,6 +24,7 @@ const Event = () => {
               name={event?.name}
               imageLinks={event?.imageLinks}
               description={event?.description}
+              rullBookLink={event?.rullBookLink}
             />
           ))}
         </div>
