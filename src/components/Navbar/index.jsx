@@ -26,7 +26,7 @@ const Nav = () => {
             <a href="#pastevents">Past Events</a>
           </li>
           <li className="nav-item">
-            <Link href="/login">Login</Link>
+            <Link to="/login">Login</Link>
           </li>
         </ul>
       </nav>
