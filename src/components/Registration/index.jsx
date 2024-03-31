@@ -4,18 +4,19 @@ import Input from "./Input";
 import { useParams } from "react-router-dom";
 import "./register.scss";
 import axios from "axios";
+import { useSelector } from "react-redux";
 const Registration = () => {
   const apiUrl = import.meta.env.VITE_API_URL;
   const params = useParams();
+  const { user } = useSelector((state) => state.user);
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [participant, setParticipipant] = useState({
-    name: "",
-    phone: "",
-    email: "",
-    branch: "",
-    batch: "",
-    event: params.id,
+    teamName: "",
+    leadersPhone: "",
+    leadersEmail: "",
+    leadersBranch: "",
+    leadersBatch: "",
   });
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,13 +28,17 @@ const Registration = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
-    axios.post(`${apiUrl}/api/v1/register`, participant).then((response) => {
-      console.log(response);
-      if (response.data.success) {
-        setSuccess(true);
-        setIsLoading(false);
-      }
-    });
+    const config = {
+      headers: { "Content-Type": "application/json", " _id": user._id },
+    };
+    axios
+      .post(`${apiUrl}/api/v1/register/${params.id}`, participant, config)
+      .then((response) => {
+        if (response.data.success) {
+          setSuccess(true);
+          setIsLoading(false);
+        }
+      });
   };
   useEffect(() => {
     setTimeout(() => {
@@ -44,29 +49,29 @@ const Registration = () => {
     <>
       <Navbar />
       <div className="register_section container">
-        <div class="box">
+        <div className="box">
           <span></span>
           <form onSubmit={handleSubmit} className="content">
             <Input
               label="Team Name"
               onChange={handleChange}
-              name="name"
+              name="teamName"
               value={participant.name}
-              placeholder="Your Name.."
+              placeholder="Team Name.."
             />
             <Input
               label="Leader's Phone Number"
               onChange={handleChange}
-              name="phone"
+              name="leadersPhone"
               value={participant.phone}
-              placeholder="Your phone.."
+              placeholder="Leader's phone.."
             />
             <Input
               label="Leader's Email"
               onChange={handleChange}
-              name="email"
+              name="leadersEmail"
               value={participant.email}
-              placeholder="Your Email.."
+              placeholder="Leader's Email.."
             />
             <div>
               <label htmlFor="Leader's Batch">Batch</label>
@@ -74,7 +79,7 @@ const Registration = () => {
                 onChange={(e) =>
                   setParticipipant((prevParticipantData) => ({
                     ...prevParticipantData,
-                    batch: e.target.value,
+                    leadersBatch: e.target.value,
                   }))
                 }
               >
@@ -91,7 +96,7 @@ const Registration = () => {
                 onChange={(e) =>
                   setParticipipant((prevParticipantData) => ({
                     ...prevParticipantData,
-                    branch: e.target.value,
+                    leadersBranch: e.target.value,
                   }))
                 }
               >
@@ -132,7 +137,7 @@ const Registration = () => {
                 : "Submit"}
             </button>
           </form>
-          <form onSubmit={handleSubmit} className="content">
+          {/* <form onSubmit={handleSubmit} className="content">
             <Input
               label="Participant 1 Name"
               onChange={handleChange}
@@ -217,7 +222,7 @@ const Registration = () => {
                 ? "Register successfully"
                 : "Submit"}
             </button>
-          </form>
+          </form> */}
         </div>
       </div>
     </>

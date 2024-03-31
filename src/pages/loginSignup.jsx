@@ -21,37 +21,39 @@ const LoginSignUp = () => {
   const [message, setMessage] = useState("");
   const handleLogin = (e) => {
     e.preventDefault();
-    axios.post(`${apiUrl}/api/v1/login`, loginData).then((data) => {
-      const userData = data?.data;
-      if (userData?.statusCode == 200) {
-        dispatch(
-          updateUserSlice({
-            user: userData?.data?.user,
-            loggenInToken: userData?.data?.token,
-          })
-        );
-        navigate("/");
-      } else {
-        setMessage(userData?.data?.message);
-      }
-    });
+    axios
+      .post(`${apiUrl}/api/v1/login`, loginData)
+      .then((data) => {
+        const userData = data?.data;
+        if (userData?.statusCode == 200) {
+          dispatch(
+            updateUserSlice({
+              user: userData?.data?.user,
+              loggenInToken: userData?.data?.token,
+            })
+          );
+          navigate("/");
+        }
+      })
+      .catch((error) => setMessage(error?.response?.data?.message));
   };
   const handleRegister = (e) => {
     e.preventDefault();
-    axios.post(`${apiUrl}/api/v1/registeruser`, registerData).then((data) => {
-      const userData = data?.data;
-      if (userData?.statusCode == 200) {
-        dispatch(
-          updateUserSlice({
-            user: userData?.data?.user,
-            loggenInToken: userData?.data?.token,
-          })
-        );
-        navigate("/");
-      } else {
-        setMessage(userData?.data?.message);
-      }
-    });
+    axios
+      .post(`${apiUrl}/api/v1/registeruser`, registerData)
+      .then((data) => {
+        const userData = data?.data;
+        if (userData?.statusCode == 200) {
+          dispatch(
+            updateUserSlice({
+              user: userData?.data?.user,
+              loggenInToken: userData?.data?.token,
+            })
+          );
+          navigate("/");
+        }
+      })
+      .catch((error) => setMessage(error?.response?.data?.message));
   };
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -63,7 +65,7 @@ const LoginSignUp = () => {
     <div className="body">
       <div className="main">
         <div className="left-side"></div>
-        <p className="text-red-600">{message}</p>
+        <p className="text-red-600 mt-8">{message}</p>
         <div className="right-side">
           <form onSubmit={page == "login" ? handleLogin : handleRegister}>
             <label className="loglebel" htmlFor="email">

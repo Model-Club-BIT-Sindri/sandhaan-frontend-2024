@@ -11,9 +11,6 @@
 }
 
 .main {
-  display: grid;
-  grid-template-columns: 45% 55%;
-  place-items: center;
   background: #f6f6f6;
   width: min(700px, 95%);
   border-radius: 20px;
@@ -24,10 +21,6 @@
 .left-side {
   height: 100%;
   width: 100%;
-  background-image: url(https://github.com/ecemgo/mini-samples-great-tricks/assets/13468728/64ef8d9a-9202-4543-b838-82f4c7c91ccf);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
   pointer-events: none;
   border-radius: 20px 0 0 20px;
 }
