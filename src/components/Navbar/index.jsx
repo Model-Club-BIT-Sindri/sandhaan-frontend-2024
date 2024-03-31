@@ -2,8 +2,10 @@ import React from "react";
 import "../Navbar/navbar.scss";
 import modelLogo from "../../assets/club-logo.png";
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { revertUserSlice } from "../../redux/Slices/userSlices";
 const Nav = () => {
+  const dispatch = useDispatch();
   const { user } = useSelector((state) => state.user);
   return (
     <div className="nav-wrapper">
@@ -16,7 +18,7 @@ const Nav = () => {
         </div>
         <ul className="nav no-search">
           <li className="nav-item">
-            <a href="#">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li className="nav-item">
             <a href="#events">Our Events</a>
@@ -27,9 +29,21 @@ const Nav = () => {
           <li className="nav-item">
             <a href="#pastevents">Past Events</a>
           </li>
-          <li className="nav-item">
-            <Link to="/login">Login</Link>
-          </li>
+          {!user && (
+            <li className="nav-item">
+              <Link to="/login">Login</Link>
+            </li>
+          )}
+          {user && (
+            <div>
+              <button
+                className="rounded-md bg-white text-black px-4 py-[4px] text-center mt-[4px]"
+                onClick={() => dispatch(revertUserSlice())}
+              >
+                Logout
+              </button>
+            </div>
+          )}
         </ul>
       </nav>
     </div>

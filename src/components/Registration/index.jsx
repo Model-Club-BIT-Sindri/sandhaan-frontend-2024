@@ -11,6 +11,7 @@ const Registration = () => {
   const { user } = useSelector((state) => state.user);
   const [success, setSuccess] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [addMore, setAddMore] = useState(false);
   const [participant, setParticipipant] = useState({
     teamName: "",
     leadersPhone: "",
@@ -135,6 +136,13 @@ const Registration = () => {
                 : success
                 ? "Register successfully"
                 : "Submit"}
+            </button>
+            <button
+              type="button"
+              onClick={() => setAddMore(true)}
+              className="bg-blue-600 text-white px-4 py-[4px] w-full text-center"
+            >
+              Add Team Member
             </button>
           </form>
           {/* <form onSubmit={handleSubmit} className="content">

@@ -19,13 +19,20 @@ const LoginSignUp = () => {
     password: "",
   });
   const [message, setMessage] = useState("");
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+    },
+    withCredentials: true,
+  };
   const handleLogin = (e) => {
     e.preventDefault();
     axios
-      .post(`${apiUrl}/api/v1/login`, loginData)
+      .post(`${apiUrl}/api/v1/login`, loginData, config)
       .then((data) => {
         const userData = data?.data;
         if (userData?.statusCode == 200) {
+          localStorage.setItem("loggedInToken", userData?.data?.token);
           dispatch(
             updateUserSlice({
               user: userData?.data?.user,
@@ -40,10 +47,11 @@ const LoginSignUp = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     axios
-      .post(`${apiUrl}/api/v1/registeruser`, registerData)
+      .post(`${apiUrl}/api/v1/registeruser`, registerData, config)
       .then((data) => {
         const userData = data?.data;
         if (userData?.statusCode == 200) {
+          localStorage.setItem("loggedInToken", userData?.data?.token);
           dispatch(
             updateUserSlice({
               user: userData?.data?.user,
