@@ -11,8 +11,8 @@ const apiUrl = import.meta.env.VITE_API_URL;
 function App() {
   const dispatch = useDispatch();
   useEffect(() => {
-    const token = localStorage.getItem("loggedInToken");
-    if (token) {
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+    if (isLoggedIn) {
       axios.get(`${apiUrl}/api/v1/getcurrentuser`).then((data) => {
         dispatch(
           updateUserSlice({

@@ -1,12 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../Navbar/navbar.scss";
 import modelLogo from "../../assets/club-logo.png";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { revertUserSlice } from "../../redux/Slices/userSlices";
+import axios from "axios";
 const Nav = () => {
   const dispatch = useDispatch();
-  const { user } = useSelector((state) => state.user);
+  const isLoggedIn = localStorage.getItem("isLoggedIn");
+  const [login, setLogin] = useState(false);
+  useState(() => {
+    if (isLoggedIn) {
+      setLogin(true);
+    }
+  }, [isLoggedIn]);
+  const apiUrl = import.meta.env.VITE_API_URL;
+  const handleLogout = () => {
+    dispatch(revertUserSlice());
+    localStorage.removeItem("isLoggedIn");
+    setLogin(false);
+    axios.get(`${apiUrl}/api/v1/logout`).then((data) => console.log(data));
+  };
   return (
     <div className="nav-wrapper">
       <nav className="navbar">
@@ -29,16 +43,16 @@ const Nav = () => {
           <li className="nav-item">
             <a href="#pastevents">Past Events</a>
           </li>
-          {!user && (
+          {!isLoggedIn && (
             <li className="nav-item">
               <Link to="/login">Login</Link>
             </li>
           )}
-          {user && (
+          {isLoggedIn && (
             <div>
               <button
                 className="rounded-md bg-white text-black px-4 py-[4px] text-center mt-[4px]"
-                onClick={() => dispatch(revertUserSlice())}
+                onClick={handleLogout}
               >
                 Logout
               </button>

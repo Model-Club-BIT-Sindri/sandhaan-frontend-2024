@@ -32,11 +32,10 @@ const LoginSignUp = () => {
       .then((data) => {
         const userData = data?.data;
         if (userData?.statusCode == 200) {
-          localStorage.setItem("loggedInToken", userData?.data?.token);
+          localStorage.setItem("isLoggedIn", true);
           dispatch(
             updateUserSlice({
               user: userData?.data?.user,
-              loggenInToken: userData?.data?.token,
             })
           );
           navigate("/");
@@ -51,11 +50,10 @@ const LoginSignUp = () => {
       .then((data) => {
         const userData = data?.data;
         if (userData?.statusCode == 200) {
-          localStorage.setItem("loggedInToken", userData?.data?.token);
+          localStorage.setItem("isLoggedIn", true);
           dispatch(
             updateUserSlice({
               user: userData?.data?.user,
-              loggenInToken: userData?.data?.token,
             })
           );
           navigate("/");
