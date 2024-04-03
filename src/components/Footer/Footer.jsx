@@ -8,44 +8,44 @@ const year = new Date().getFullYear();
 export default function Footer() {
   const linksList = [
     {
-      title: "Counselling Centre",
-      href: "http://www.counsellingcentre.iitkgp.ac.in/",
+      title: "Chaiperson",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "Model Club",
-      href: "https://modelclubbit.com",
+      title: "Vikash Kumar",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "Yellow Pages",
-      href: "",
+      title: "Vice Chairperson",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "HMC",
+      title: "Payal Kumari",
       description: "Hall Management Center",
-      href: "",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "Library",
-      href: "",
+      title: "General Secretary",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "ERP",
-      href: "",
+      title: "Piyush Kumar",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "Your Dost",
-      href: "",
+      title: "Joint Secretary",
+      href: "tel:9835811831",
       target: "_blank",
     },
     {
-      title: "Grievance Form",
-      href: "",
+      title: "Amrendra Tiwary",
+      href: "tel:9835811831",
       target: "_blank",
     },
   ];
