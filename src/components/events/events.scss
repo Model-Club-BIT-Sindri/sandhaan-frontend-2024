@@ -203,3 +203,22 @@ body * {
     transform: translate(-50%, -50%) rotate(415deg);
   }
 }
+
+@media screen and (max-width: 550px) {
+  .wrapper {
+    width: 95vw;
+  }
+  .card {
+    padding: 1rem;
+  }
+  .btngroup {
+    display: flex;
+    gap: 1rem;
+  }
+  .card .info .btn {
+    padding: 8px 1rem;
+  }
+  .container {
+    padding: 0;
+  }
+}

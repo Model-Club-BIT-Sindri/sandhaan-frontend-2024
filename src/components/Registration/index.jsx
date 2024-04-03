@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Navbar from "../Navbar/index";
+import Navbar from "../Navbar/Navbar";
 import Input from "./Input";
 import { useParams } from "react-router-dom";
 import "./register.scss";

@@ -1,15 +1,15 @@
 import React from "react";
-import Navbar from "../components/Navbar";
-import Hero from "../components/Hero";
+import Navbar from "../components/Navbar/Navbar";
+import Home from "../components/Home/Home";
 import Description from "../components/sandhaan_desc";
 import Event from "../components/events";
-import Footer from "../components/Footer";
+import Footer from "../components/Footer/Footer";
 import PastEvents from "../components/pastevents";
 const Landing = () => {
   return (
     <>
       <Navbar />
-      <Hero />
+      <Home />
       <Description />
       <PastEvents />
       <Event />

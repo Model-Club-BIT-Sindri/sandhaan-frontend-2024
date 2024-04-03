@@ -12,11 +12,12 @@ const PastEvents = () => {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 1000,
+    arrows: false,
   };
   return (
     <div className="h-[100vmin]">
       <div className="head_1 mb-12">
-        <p className="text-2xl my-4">GLIMPSES</p>
+        <p className="text-3xl my-4">GLIMPSES</p>
       </div>
       <Slider {...settings}>
         <div className="slider">

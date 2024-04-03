@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300;400&display=swap");
+html {
+  scroll-behavior: smooth;
+}
+
+.backgroundImage {
+  width: 100%;
+  height: 100vh;
+  background: url("https://www.bitsindri.ac.in/old/images/slide/2022/EE6DCBE6-20FD-4B0E-8154-EB2166F485E4.jpeg");
+  background-size: cover;
+  position: relative;
+  background-position: center;
+}
+
+.textOverlay {
+  padding: 0rem 1rem;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+.textOverlay .kgpSvg {
+  height: 30%;
+  margin-right: 1rem;
+}
+.textOverlay img {
+  height: 100%;
+  width: 100%;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 90vh;
+  position: relative;
+  background-color: black;
+}
+.committeesContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 18vh;
+}
+
+.aboutUsSection {
+  text-align: center;
+  margin: auto;
+  padding: 4rem 3rem;
+  background-color: #2a2b2f;
+  backdrop-filter: blur(1.5rem);
+  -webkit-backdrop-filter: blur(1.5rem);
+  border-radius: 1rem;
+  color: white;
+  width: 90%;
+  max-width: 1200px;
+  z-index: 2;
+}
+.committeesSection {
+  max-width: 1200px;
+  width: 90%;
+  margin: auto;
+}
+
+.sectionHeading {
+  text-align: center;
+  font-size: 2.25rem;
+  margin-bottom: 2rem;
+  letter-spacing: 2px;
+  color: #f1c40f;
+}
+
+.description {
+  letter-spacing: 1.5px;
+  font-size: 1.25rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 125%;
+}
+.societiesSection {
+  position: relative;
+  width: 90%;
+  max-width: 1200px;
+
+  margin-bottom: 5rem;
+  display: flex;
+}
+
+/* ReadMore Section */
+
+.animationTrigger {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  text-align: center;
+  cursor: pointer;
+}
+.moreText {
+  display: inline-block;
+  padding: 1rem 2rem;
+  border: 2px solid white;
+  border-radius: 3rem;
+  color: #fff;
+  color: white;
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: all 0.25s ease-out;
+  text-transform: uppercase;
+}
+.moreText:hover {
+  background-color: white;
+  color: #f1c40f;
+}
+.animationTrigger:hover .moreText {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease-in-out;
+}
+.moreDots {
+  transform: translateY(-15px);
+  transition: all 0.3s ease;
+}
+.animationTrigger:hover .moreDots {
+  transform: translateY(-5px);
+  transition: all 0.3s ease-out;
+}
+.moreDots .dot {
+  display: inline-block;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  margin: 0.25rem;
+  background: white;
+}
+.animationTrigger:hover .moreDots .dot {
+  animation: bounce-3 0.8s 1 ease;
+  animation-fill-mode: forwards;
+}
+.animationTrigger:hover .moreDots .dot.dot2 {
+  animation-delay: 0.1s;
+}
+.animationTrigger:hover .moreDots .dot.dot3 {
+  animation-delay: 0.2s;
+}
+.animationTrigger:hover .moreDots .dot.dot4 {
+  animation-delay: 0.3s;
+}
+@keyframes bounce-1 {
+  0%,
+  25% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(0, 30px) scale(0.2);
+    background: #dcdcdc;
+  }
+  75%,
+  100% {
+    transform: translate(0, 0) scale(1);
+    opacity: 0;
+  }
+}
+@keyframes bounce-2 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(0, 30px) scale(0.2);
+    background: #dcdcdc;
+  }
+}
+@keyframes bounce-3 {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(0, 15px);
+    background: #dcdcdc;
+  }
+  70% {
+    transform: translate(0, 13px);
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .societiesSection {
+    display: flex;
+    flex-direction: column;
+  }
+  .societiesSection .readMore {
+    margin: auto;
+    /* padding: 2rem; */
+  }
+  .readMore .moreDots {
+    display: none;
+  }
+  .readMore .moreText {
+    color: #f1c40f;
+    border: 1px solid #f1c40f;
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .textOverlay {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+  .textOverlay .kgpSvg {
+    width: 100%;
+    max-height: 25%;
+  }
+  .textOverlay .kgpSvg img {
+    object-fit: contain;
+  }
+}
