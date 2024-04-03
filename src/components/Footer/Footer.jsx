@@ -14,38 +14,38 @@ export default function Footer() {
     },
     {
       title: "Model Club",
-      href: "http://www.modelclubbbit.com",
+      href: "https://modelclubbit.com",
       target: "_blank",
     },
     {
       title: "Yellow Pages",
-      href: "https://wiki.metakgp.org/w/Yellow_pages",
+      href: "",
       target: "_blank",
     },
     {
       title: "HMC",
       description: "Hall Management Center",
-      href: "http://www.hmc.iitkgp.ac.in/web/",
+      href: "",
       target: "_blank",
     },
     {
       title: "Library",
-      href: "https://library.iitkgp.ac.in/",
+      href: "",
       target: "_blank",
     },
     {
       title: "ERP",
-      href: "https://erp.iitkgp.ac.in/SSOAdministration/login.htm?sessionToken=F90F79C925A0FE0DC48AE7CBFDE3D20A.worker1&requestedUrl=https://erp.iitkgp.ac.in/IIT_ERP3/",
+      href: "",
       target: "_blank",
     },
     {
       title: "Your Dost",
-      href: "https://wiki.metakgp.org/w/Yellow_pages/",
+      href: "",
       target: "_blank",
     },
     {
       title: "Grievance Form",
-      href: "https://docs.google.com/forms/d/e/1FAIpQLSft9FXZYvLiNt3oy0K3Iu4d6HoE830RhNWFHMXx1R4IjlhHKA/viewform",
+      href: "",
       target: "_blank",
     },
   ];
