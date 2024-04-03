@@ -121,7 +121,7 @@ export default function Footer() {
         </div>
       </div>
       <div className={Styles.footerLine}></div>
-      <div>
+      <div className={Styles.copyRightSection}>
         <p>&copy;Copyright Model Club BIT Sindri {year}</p>
         <p>All rights reserved</p>
       </div>
